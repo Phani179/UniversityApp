@@ -1,10 +1,13 @@
 import "package:flutter/material.dart";
 import 'package:drop_shadow/drop_shadow.dart';
 
+import 'Screen2.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget
 {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,21 +21,21 @@ class MyApp extends StatelessWidget
               Positioned(
                 left : 33,
                 top : 60,
-                child : Image.asset('assets/images/Ellipse6.png'),
+                child : Image.asset('assets/images/HomePageLogoBG1.png'),
               ),
 
               // Ellipse7
               Positioned(
                 left : 75,
                 top : 100,
-                child: Image.asset('assets/images/Ellipse7.png'),
+                child: Image.asset('assets/images/HomePageLogoBG2.png'),
               ),
 
               // BRAU LOGO
               Positioned(
                 left: 108,  //110
                 top: 130,   //130
-                child: Center(child: Image.asset('assets/images/logo.png')),
+                child: Center(child: Image.asset('assets/images/HomePageLogo.png')),
               ),
               // Text
               Center(
@@ -80,8 +83,6 @@ class MyApp extends StatelessWidget
                 right: 20,
                 child:
                 SizedBox(
-                  height: 59,
-                  width: 325,
                   child: Container(
                       decoration:  BoxDecoration(
                         shape: BoxShape.rectangle,
@@ -99,10 +100,12 @@ class MyApp extends StatelessWidget
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                             backgroundColor: const Color(0xFF00512D),   // #00512D
-                            padding: EdgeInsets.fromLTRB(76, 18, 76, 17),
+                            // padding: const EdgeInsets.fromLTRB(76, 18, 76, 17),
                           ),
 
-                          onPressed: (){},  // Next Page Navigation.
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Screen2()));
+                          },  // Next Page Navigation.
                           child : const Text(
                             "Get started",
                             style: TextStyle(
